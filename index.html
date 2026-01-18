@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Katalyst One-Pager</title>
+    <meta name="description" content="AI-powered product catalog automation for high-turnover e-commerce retailers." />
+    <style>
+      :root {
+        --bg: #fafaf9;
+        --ink: #2e3436;
+        --muted: #5f6569;
+        --primary: #008080;
+        --accent: #ff5722;
+        --success: #2e7d32;
+        --light: #f9f9f9;
+        --dark: #0f3d3e;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Inter", Arial, Helvetica, sans-serif;
+        color: var(--ink);
+        background: var(--bg);
+      }
+
+      .page {
+        width: 100%;
+      }
+
+      header {
+        padding: 96px 24px 72px;
+        text-align: center;
+        background: #ffffff;
+      }
+
+      .logo {
+        width: 160px;
+        height: auto;
+        margin: 0 auto 20px;
+        display: block;
+      }
+
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.2em;
+        font-size: 12px;
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+
+      h1 {
+        font-family: "Libre Baskerville", "Times New Roman", serif;
+        font-size: clamp(42px, 6vw, 64px);
+        margin: 0;
+        line-height: 1.12;
+      }
+
+      .subtitle {
+        font-size: 20px;
+        color: var(--muted);
+        max-width: 760px;
+        line-height: 1.75;
+        margin: 24px auto 0;
+      }
+
+      .hero-actions {
+        margin-top: 28px;
+        display: grid;
+        gap: 14px;
+        justify-items: center;
+      }
+
+      .button {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        padding: 12px 22px;
+        border-radius: 999px;
+        font-size: 14px;
+        font-weight: 600;
+        text-decoration: none;
+        border: 1px solid transparent;
+      }
+
+      .button-primary {
+        background: var(--primary);
+        color: #ffffff;
+      }
+
+      .button-secondary {
+        background: transparent;
+        color: var(--primary);
+        border-color: var(--primary);
+      }
+
+      .hero-meta {
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      section {
+        padding: 96px 24px;
+      }
+
+      .section-inner {
+        max-width: 780px;
+        margin: 0 auto;
+      }
+
+      .section-light {
+        background: var(--light);
+      }
+
+      .section-dark {
+        background: var(--dark);
+        color: #ffffff;
+      }
+
+      h2 {
+        font-family: "Libre Baskerville", "Times New Roman", serif;
+        font-size: 28px;
+        letter-spacing: 0;
+        text-transform: none;
+        margin: 0;
+        color: var(--primary);
+      }
+
+      .section-dark h2 {
+        color: #ffffff;
+      }
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        line-height: 1.75;
+        color: var(--muted);
+      }
+
+      .section-dark ul {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      li {
+        margin-bottom: 16px;
+      }
+
+      .list-strong li {
+        font-weight: 600;
+        color: var(--ink);
+      }
+
+      .section-dark .list-strong li {
+        color: #ffffff;
+      }
+
+      .list-icon li {
+        display: grid;
+        grid-template-columns: 28px 1fr;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .list-icon .material-symbols-outlined {
+        color: var(--success);
+        font-size: 24px;
+      }
+
+      .section-dark .list-icon .material-symbols-outlined {
+        color: #ffffff;
+      }
+
+      .link {
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .section-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 12px;
+      }
+
+      .material-symbols-outlined {
+        font-family: "Material Symbols Outlined";
+        font-weight: 400;
+        font-style: normal;
+        font-size: 24px;
+        display: inline-block;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        color: var(--primary);
+      }
+
+      .section-dark .material-symbols-outlined {
+        color: #ffffff;
+      }
+
+      .metrics {
+        display: grid;
+        gap: 20px;
+        margin-top: 28px;
+      }
+
+      .metric {
+        text-align: center;
+        padding: 18px 12px;
+      }
+
+      .metric-icon {
+        font-size: 28px;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      .metric-title {
+        font-weight: 600;
+        color: var(--ink);
+        margin-bottom: 6px;
+      }
+
+      .metric-subtitle {
+        font-size: 14px;
+        color: var(--muted);
+      }
+
+      footer {
+        margin-top: 80px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+        padding-bottom: 72px;
+      }
+
+      .footer-actions {
+        margin-top: 18px;
+        display: grid;
+        gap: 12px;
+        justify-items: center;
+      }
+
+      @media (min-width: 760px) {
+        .metrics {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined&display=block" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=block" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="page">
+      <header>
+        <img class="logo" src="Katalyst%20AI.png" alt="Katalyst AI logo" />
+        <div class="eyebrow">Katalyst One-Pager</div>
+        <h1>Publish products on time, every time.</h1>
+        <p class="subtitle">
+          An AI agent that ingests supplier data and turns it into complete, front-end-ready product pages for
+          high-turnover e-commerce teams.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="https://youtu.be/AsoyaK9EE4M">Watch the demo</a>
+          <a class="button button-secondary" href="https://katalyst-ai.com/pricing">View pricing</a>
+          <div class="hero-meta">AI agent to automate supplier data ingestion and product page creation.</div>
+        </div>
+      </header>
+
+      <section class="section-light">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="material-symbols-outlined" aria-hidden="true">report_problem</span>
+            <h2>The problem</h2>
+          </div>
+          <ul>
+            <li>Manual, slow, and human-dependent catalog processes</li>
+            <li>Fragmented data sources (PDFs, Excel files, supplier and manufacturer websites)</li>
+            <li>Products available for sale but not live online</li>
+            <li>Lost revenue opportunities</li>
+            <li>HR cost-saving pressure</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="material-symbols-outlined" aria-hidden="true">auto_awesome</span>
+            <h2>The solution</h2>
+          </div>
+          <ul class="list-icon list-strong">
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Rich, high-quality product descriptions</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Technical specifications</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Q&amp;A / FAQs</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Consistent, front-end-ready structure</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Native integration with platforms such as Shopify, Magento, and more</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-light">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="material-symbols-outlined" aria-hidden="true">groups</span>
+            <h2>Target customers</h2>
+          </div>
+          <ul>
+            <li>Retail and E-commerce companies</li>
+            <li>Catalogs with hundreds of products or more</li>
+            <li>High monthly or quarterly product launches / turnover</li>
+            <li>Small or overloaded catalog and content teams</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="material-symbols-outlined" aria-hidden="true">trending_up</span>
+            <h2>Business value</h2>
+          </div>
+          <div class="metrics">
+            <div class="metric">
+              <div class="material-symbols-outlined metric-icon" aria-hidden="true">schedule</div>
+              <div class="metric-title">Faster time-to-market</div>
+              <div class="metric-subtitle">Launch on schedule, every cycle.</div>
+            </div>
+            <div class="metric">
+              <div class="material-symbols-outlined metric-icon" aria-hidden="true">paid</div>
+              <div class="metric-title">Prevent lost sales</div>
+              <div class="metric-subtitle">Inventory live when demand hits.</div>
+            </div>
+            <div class="metric">
+              <div class="material-symbols-outlined metric-icon" aria-hidden="true">groups</div>
+              <div class="metric-title">Scale without headcount</div>
+              <div class="metric-subtitle">Automation removes manual load.</div>
+            </div>
+            <div class="metric">
+              <div class="material-symbols-outlined metric-icon" aria-hidden="true">verified</div>
+              <div class="metric-title">Consistent quality</div>
+              <div class="metric-subtitle">SEO-ready, structured output.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-light">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="material-symbols-outlined" aria-hidden="true">bolt</span>
+            <h2>Why this matters now</h2>
+          </div>
+          <ul>
+            <li>Accelerating pace of product launches</li>
+            <li>Growing pressure on E-commerce and content teams</li>
+            <li>AI now enables true automation of processes that were previously manual</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="material-symbols-outlined" aria-hidden="true">content_paste</span>
+            <h2>Existing alternatives</h2>
+          </div>
+          <ul>
+            <li>Manual product uploads - time-consuming and inefficient</li>
+            <li>Outsourced content creation - poor UX, lack of domain understanding and ownership</li>
+            <li>ChatGPT and similar - manual copy/paste, inconsistent, and limited to content generation</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-dark">
+        <div class="section-inner">
+          <div class="section-header">
+            <span class="material-symbols-outlined" aria-hidden="true">verified</span>
+            <h2>Our differentiation</h2>
+          </div>
+          <ul class="list-icon list-strong">
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Full automation from data ingestion to live product page</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Built directly on supplier data, domain-aware, no manual writing or decision-making</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Natively adapted to the customer’s e-commerce platform</li>
+            <li><span class="material-symbols-outlined" aria-hidden="true">check_circle</span>Long-term learning based on multi-source data over time</li>
+          </ul>
+        </div>
+      </section>
+
+      <footer>
+        Ready to see it in action?
+        <div class="footer-actions">
+          <a class="button button-secondary" href="https://youtu.be/AsoyaK9EE4M">Watch the demo</a>
+          <a class="link" href="https://katalyst-ai.com/pricing">View pricing and business model</a>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
