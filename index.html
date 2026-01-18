@@ -26,14 +26,26 @@
         font-family: "Inter", Arial, Helvetica, sans-serif;
         color: var(--ink);
         background: var(--bg);
-      }
-
-      body.video-in-view {
-        background: var(--dark);
+        transition: background-color 600ms ease;
       }
 
       .page {
         width: 100%;
+      }
+
+      .bg-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 61, 62, 0.6);
+        opacity: 0;
+        transition: opacity 600ms ease;
+        z-index: 2;
+        pointer-events: none;
+        backdrop-filter: blur(6px);
+      }
+
+      body.video-in-view .bg-overlay {
+        opacity: 1;
       }
 
       header {
@@ -220,12 +232,16 @@
 
       .video-section {
         background: transparent;
+        position: relative;
+        z-index: 3;
       }
 
       .video-wrap {
         max-width: 920px;
         margin: 0 auto;
         padding: 0 24px;
+        position: relative;
+        z-index: 3;
       }
 
       .video-frame {
@@ -289,6 +305,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=block" rel="stylesheet" />
   </head>
   <body>
+    <div class="bg-overlay" aria-hidden="true"></div>
     <div class="page">
       <header>
         <img class="logo" src="Katalyst%20AI.png" alt="Katalyst AI logo" />
@@ -307,7 +324,7 @@
       <section class="video-section" id="demo-video">
         <div class="video-wrap">
           <div class="video-frame">
-            <video src="Demo.mp4" controls playsinline preload="metadata"></video>
+            <video id="demo-video-player" src="Demo.mp4" controls playsinline preload="metadata"></video>
           </div>
         </div>
       </section>
@@ -443,8 +460,8 @@
     </div>
     <script>
       (function () {
-        var videoSection = document.getElementById("demo-video");
-        if (!videoSection || !("IntersectionObserver" in window)) return;
+        var video = document.getElementById("demo-video-player");
+        if (!video || !("IntersectionObserver" in window)) return;
 
         var observer = new IntersectionObserver(
           function (entries) {
@@ -456,10 +473,10 @@
               }
             });
           },
-          { threshold: 0.4 }
+          { threshold: 0, rootMargin: "-50% 0px -50% 0px" }
         );
 
-        observer.observe(videoSection);
+        observer.observe(video);
       })();
     </script>
   </body>
