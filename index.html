@@ -28,6 +28,10 @@
         background: var(--bg);
       }
 
+      body.video-in-view {
+        background: var(--dark);
+      }
+
       .page {
         width: 100%;
       }
@@ -214,6 +218,30 @@
         margin-top: 28px;
       }
 
+      .video-section {
+        background: transparent;
+      }
+
+      .video-wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      .video-frame {
+        border-radius: 18px;
+        overflow: hidden;
+        background: #ffffff;
+        box-shadow: 0 24px 60px -40px rgba(0, 64, 80, 0.45);
+        border: 1px solid rgba(0, 128, 128, 0.15);
+      }
+
+      .video-frame video {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
       .metric {
         text-align: center;
         padding: 18px 12px;
@@ -271,11 +299,18 @@
           high-turnover e-commerce teams.
         </p>
         <div class="hero-actions">
-          <a class="button button-primary" href="https://youtu.be/AsoyaK9EE4M">Watch the demo</a>
           <a class="button button-secondary" href="https://katalyst-ai.com/pricing">View pricing</a>
           <div class="hero-meta">AI agent to automate supplier data ingestion and product page creation.</div>
         </div>
       </header>
+
+      <section class="video-section" id="demo-video">
+        <div class="video-wrap">
+          <div class="video-frame">
+            <video src="Demo.mp4" controls playsinline preload="metadata"></video>
+          </div>
+        </div>
+      </section>
 
       <section class="section-light">
         <div class="section-inner">
@@ -406,5 +441,26 @@
         </div>
       </footer>
     </div>
+    <script>
+      (function () {
+        var videoSection = document.getElementById("demo-video");
+        if (!videoSection || !("IntersectionObserver" in window)) return;
+
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                document.body.classList.add("video-in-view");
+              } else {
+                document.body.classList.remove("video-in-view");
+              }
+            });
+          },
+          { threshold: 0.4 }
+        );
+
+        observer.observe(videoSection);
+      })();
+    </script>
   </body>
 </html>
